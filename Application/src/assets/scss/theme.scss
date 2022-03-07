@@ -499,6 +499,10 @@ span.flatpickr-weekday {
     padding: 0;
     border: none;
     background: #222736;
+
+    &:not(.monomic-app) {
+      width: 18rem;
+    }
   }
 
   .link {
@@ -635,46 +639,50 @@ span.flatpickr-weekday {
   }
 }
 
-.ReactModal__Overlay {
-  // width: 30rem !important;
-  // height: 30rem !important;
-  // left: 28rem !important; 
-  // top: -1rem !important;
-  background: rgba(0,0,0,0.4) !important;
-
-  opacity: 0;
-  transform: translateX(-100px);
-  transition: all 500ms ease-in-out;
-}
-
-.ReactModal__Overlay--after-open {
-  opacity: 1;
-  transform: translateX(0px);
-}
-
-.ReactModal__Overlay--before-close {
-  opacity: 0;
-  transform: translateX(-100px);
-}
-
-.ReactModal__Content.ReactModal__Content--after-open {
-  background: #cba02b !important;
-  width: 28rem !important;
-  left: 25rem !important;
-  padding: 30px !important;
-  height: 20rem !important;
-  border: 0 !important;
-  top: 4rem !important;
-
-  h2 {
-    color: #000;
-    font-family: monospace;
-
-    span {
-      font-family: cursive;
-    }
-  }
-}
+// .node-info.modal-dialog {
+//   margin: 2rem 0;
+//   left: 60%;
+// }
+  // .ReactModal__Overlay {
+  //   // width: 30rem !important;
+  //   // height: 30rem !important;
+  //   // left: 28rem !important; 
+  //   // top: -1rem !important;
+  //   background: rgba(0,0,0,0.4) !important;
+  
+  //   opacity: 0;
+  //   transform: translateX(-100px);
+  //   transition: all 500ms ease-in-out;
+  // }
+  
+  // .ReactModal__Overlay--after-open {
+  //   opacity: 1;
+  //   transform: translateX(0px);
+  // }
+  
+  // .ReactModal__Overlay--before-close {
+  //   opacity: 0;
+  //   transform: translateX(-100px);
+  // }
+  
+  // .ReactModal__Content.ReactModal__Content--after-open {
+  //   background: #cba02b !important;
+  //   width: 28rem !important;
+  //   left: 25rem !important;
+  //   padding: 30px !important;
+  //   height: 20rem !important;
+  //   border: 0 !important;
+  //   top: 4rem !important;
+  
+  //   h2 {
+  //     color: #000;
+  //     font-family: monospace;
+  
+  //     span {
+  //       font-family: cursive;
+  //     }
+  //   }
+  // }
 
 .scrollable {
   -webkit-overflow-scrolling: touch;
@@ -717,13 +725,18 @@ span.flatpickr-weekday {
     }
   }
 
-  .link .fa-arrow-up-right-from-square, .link  .fa-map-location-dot {
+  .link button {
     position: absolute;
     top: 10px;
     right: 10px;
-    margin-right: 0;
-    font-size: 20px;
-    color: #818f92;
+    background: transparent;
+    border: none;
+
+    i {
+      margin-right: 0;
+      font-size: 20px;
+      color: #818f92;
+    }
   }
 
   .fa-duotone {

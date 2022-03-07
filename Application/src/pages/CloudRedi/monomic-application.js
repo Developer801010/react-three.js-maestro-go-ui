@@ -10,7 +10,11 @@ import "react-perfect-scrollbar/dist/css/styles.css";
 //redux
 import ForceGraph3D from 'react-force-graph-3d';
 import { CSSTransition } from 'react-transition-group';
-import Modal from 'react-modal';
+// import Modal from 'react-modal';
+
+import {
+    Modal
+} from "reactstrap";
 
 import process from '../../common/data/mm_process.json';
 import service from '../../common/data/mm_service.json';
@@ -32,6 +36,9 @@ const monoMicApplication = () => {
     };
     const icons = ["fas fa-browser fa-fw", "fas fa-gear fa-fw", "fas fa-microchip fa-fw", "fas fa-microchip fa-fw", "fas fa-microchip fa-fw"];
     const types = ["Application", "Service", "Process", "Host", "Database"];
+    const [modal_top, setmodal_top] = useState(false);
+    const [modal_mi, setmodal_mi] = useState(false);
+    const [modal_nodeinfo, setmodal_nodeinfo] = useState(false);
 
     const NODE_R = 12;
 
@@ -80,9 +87,26 @@ const monoMicApplication = () => {
         setData({ links: links, nodes: nodes });
     }, []);
 
+    function tog_Top() {
+        setmodal_top(!modal_top);
+        removeBodyCss();
+    }
+
+    function tog_Mi() {
+
+        console.log("MEAJRASJDASJDAJDS")
+        setmodal_mi(!modal_mi);
+        removeBodyCss();
+    }
+
     const toggleModal = () => {
         setModalState(!isOpenModal);
     };
+
+    function removeBodyCss() {
+        document.body.classList.add("no_padding");
+    }
+
 
     const updateHighlight = () => {
         setHighlightNode(highlightNode);
@@ -161,7 +185,11 @@ const monoMicApplication = () => {
             <div className="main-content mono-mic mono-app">
                 <div className="intelBar">
                     <Link className="link active" to="/MonoMic/application">
-                        <i className="fa-duotone fa-map-location-dot"></i>
+                        <button onClick={() => {
+                            tog_Mi()
+                        }}>
+                            <i className="fa-duotone fa-map-location-dot"></i>
+                        </button>
 
                         <span>
                             <i className="fas fa-browser fa-fw"></i>
@@ -171,7 +199,13 @@ const monoMicApplication = () => {
                     </Link>
 
                     <Link className="link" to="/MonoMic/services">
-                        <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                        <button onClick={(e) => {
+                            e.stopPropagation();
+                            e.preventDefault();
+                            tog_Top();
+                        }}>
+                            <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                        </button>
 
                         <span>
                             <i className="fas fa-gear fa-fw"></i>
@@ -297,18 +331,60 @@ const monoMicApplication = () => {
             </div>
 
 
-            <CSSTransition
+            <Modal
+                size="sm"
+                isOpen={isOpenModal}
+                toggle={toggleModal}
+                className="node-info"
+            >
+                <div className="modal-header">
+                    <h5
+                        className="modal-title mt-0"
+                        id="graphModelInfo"
+                    >
+                        AutoGraph - LiveGraph
+                    </h5>
+                    <button
+                        onClick={() => {
+                            setModalState(false);
+                        }}
+                        type="button"
+                        className="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                    >
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div className="modal-body">
+                    <p>Cras mattis consectetur purus sit amet fermentum.
+                        Cras justo odio, dapibus ac facilisis in,
+                        egestas eget quam. Morbi leo risus, porta ac
+                        consectetur ac, vestibulum at eros.</p>
+                    <p>Praesent commodo cursus magna, vel scelerisque
+                        nisl consectetur et. Vivamus sagittis lacus vel
+                        augue laoreet rutrum faucibus dolor auctor.</p>
+                    <p className="mb-0">Aenean lacinia bibendum nulla sed consectetur.
+                        Praesent commodo cursus magna, vel scelerisque
+                        nisl consectetur et. Donec sed odio dui. Donec
+                        ullamcorper nulla non metus auctor
+                        fringilla.</p>
+                </div>
+            </Modal>
+            {/* <CSSTransition
                 in={isOpenModal}
                 timeout={300}
                 classNames="dialog"
             >
                 <Modal
+                
                     closeTimeoutMS={500}
                     isOpen={isOpenModal}
                     style={modalStyles}
                     onRequestClose={toggleModal}
                     onClick={toggleModal}
                     ariaHideApp={false}
+                    className="node-info"
                 >
                     {
                         highlightNode !== null ?
@@ -338,12 +414,85 @@ const monoMicApplication = () => {
                                 </div>
                             </> : ""
                     }
-                    {/* <button onClick={toggleModal}>
+                    <button onClick={toggleModal}>
                         Close Modal
                     </button>
-                    <div>Hello World</div> */}
+                    <div>Hello World</div>
                 </Modal>
-            </CSSTransition>
+            </CSSTransition> */}
+
+            <Modal
+                size="xl"
+                className="gBack"
+                isOpen={modal_top}
+                toggle={() => {
+                    tog_Top();
+                }}
+            >
+                <div className="modal-header">
+                    <h5
+                        className="modal-title mt-0"
+                        id="myTop"
+                    >
+                        Existing Topology Schematic
+                    </h5>
+                    <button
+                        onClick={() => {
+                            setmodal_top(false);
+                        }}
+                        type="button"
+                        className="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                    >
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div className="modal-body">
+                    <img className="topIMG" src={"/images/demoTop.png"}></img>
+                </div>
+            </Modal>
+            <Modal
+                size="xl"
+                isOpen={modal_mi}
+                toggle={(e) => {
+                    tog_Mi();
+                }}
+            >
+                <div className="modal-header">
+                    <h5
+                        className="modal-title mt-0"
+                        id="graphModelInfo"
+                    >
+                        AutoGraph - LiveGraph
+                    </h5>
+                    <button
+                        onClick={() => {
+                            setmodal_mi(false);
+                        }}
+                        type="button"
+                        className="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                    >
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div className="modal-body">
+                    <p>Cras mattis consectetur purus sit amet fermentum.
+                        Cras justo odio, dapibus ac facilisis in,
+                        egestas eget quam. Morbi leo risus, porta ac
+                        consectetur ac, vestibulum at eros.</p>
+                    <p>Praesent commodo cursus magna, vel scelerisque
+                        nisl consectetur et. Vivamus sagittis lacus vel
+                        augue laoreet rutrum faucibus dolor auctor.</p>
+                    <p className="mb-0">Aenean lacinia bibendum nulla sed consectetur.
+                        Praesent commodo cursus magna, vel scelerisque
+                        nisl consectetur et. Donec sed odio dui. Donec
+                        ullamcorper nulla non metus auctor
+                        fringilla.</p>
+                </div>
+            </Modal>
         </ React.Fragment >
     );
 }
