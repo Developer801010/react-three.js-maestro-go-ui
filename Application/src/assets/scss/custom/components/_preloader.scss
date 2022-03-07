@@ -1,0 +1,216 @@
+// 
+// preloader.scss
+//
+
+#preloader {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.75) ;
+    z-index: 9999;
+}
+
+
+  .rotate1 {
+    -webkit-animation: rotate-center .9s steps(20, start) infinite both;
+            animation: rotate-center .9s steps(20, start) infinite both;
+  }
+  .rotate2 {
+    -webkit-animation: rotate-center 1.2s steps(20, start) infinite reverse both;
+            animation: rotate-center 1.2s steps(20, start) infinite reverse both;
+  }
+  .rotate3 {
+    -webkit-animation: rotate-center 1.5s steps(20, start) infinite both;
+            animation: rotate-center 1.5s steps(20, start) infinite both;
+  }
+  .rotate4 {
+    -webkit-animation: rotate-center 1.8s steps(20, start) infinite reverse both;
+            animation: rotate-center 1.8s steps(20, start) infinite reverse both;
+  }
+  
+  .spinner1{
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0);
+    border-right: 3px solid #90e0ef;
+    z-index: 10000;
+    position: absolute;
+  }
+  .spinner2{
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0);
+    border-right: 5px solid #00b4d8;
+    z-index: 10000;
+    position: absolute;
+  }
+  .spinner3{
+    display: block;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0);
+    border-right: 5px solid #caf0f8;
+    z-index: 10000;
+    position: absolute;
+  }
+  .spinner4{
+    display: block;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 10px solid rgba(255, 255, 255, 0);
+    border-right: 10px solid #0077b6;
+    z-index: 10000;
+    position: absolute;
+  }
+  
+  .mstro{
+    display: block;
+    height: 250px;
+    width: 250px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left: -125px;
+    margin-top: -125px;
+}
+  
+  .pulse {
+  -webkit-animation: pulsate-fwd 1.2s ease-in-out infinite both;
+          animation: pulsate-fwd 1.2s ease-in-out infinite both;
+  }
+  
+  @keyframes pulsate-fwd {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    50% {
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  
+  
+  @keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+
+
+
+
+
+
+
+#status {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -20px 0 0 -20px;
+}
+
+.spinner-chase {
+    margin: 0 auto;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    animation: spinner-chase 2.5s infinite linear both;
+}
+
+.chase-dot {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0; 
+    animation: chase-dot 2.0s infinite ease-in-out both; 
+    &:before {
+        content: '';
+        display: block;
+        width: 25%;
+        height: 25%;
+        background-color: $primary;
+        border-radius: 100%;
+        animation: chase-dot-before 2.0s infinite ease-in-out both; 
+    }
+
+    &:nth-child(1) { 
+        animation-delay: -1.1s; 
+        &:before{
+            animation-delay: -1.1s;
+        }
+    }
+    &:nth-child(2) { 
+        animation-delay: -1.0s;
+        &:before{
+            animation-delay: -1.0s;
+        }
+    }
+    &:nth-child(3) { 
+        animation-delay: -0.9s;
+        &:before{
+            animation-delay: -0.9s;
+        } 
+    }
+    &:nth-child(4) { 
+        animation-delay: -0.8s; 
+        &:before{
+            animation-delay: -0.8s;
+        } 
+    }
+    &:nth-child(5) { 
+        animation-delay: -0.7s; 
+        &:before{
+            animation-delay: -0.7s;
+        } 
+    }
+    &:nth-child(6) { 
+        animation-delay: -0.6s; 
+        &:before{
+            animation-delay: -0.6s;
+        }
+    }
+}
+
+@keyframes spinner-chase {
+    100% { 
+        transform: rotate(360deg); 
+    } 
+}
+
+@keyframes chase-dot {
+    80%, 100% { 
+        transform: rotate(360deg); 
+    } 
+}
+
+@keyframes chase-dot-before {
+    50% {
+        transform: scale(0.4); 
+    } 
+    100%, 0% {
+        transform: scale(1.0); 
+    } 
+}

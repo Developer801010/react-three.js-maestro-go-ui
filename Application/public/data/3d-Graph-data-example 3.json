@@ -1,0 +1,16 @@
+{
+    "nodes": [
+      {"id": "Myriel", "group": 1},
+      {"id": "Napoleon", "group": 1},
+      {"id": "Mlle.Baptistine", "group": 1}
+    ],
+    "links": [
+      {"source": "EndPoint_Name", "target": "EndPoint_Name", "value": 1},
+      {"source": "EndPoint_Name", "target": "EndPoint_Name", "value": 8},
+      {"source": "EndPoint_Name", "target": "EndPoint_Name", "value": 10}
+    /*            ^device name               ^device name             ^Data load on edges    */
+
+    /* The device name will be unique so it can link to a more rich set of data to provide popup or node information
+
+    ]
+  }

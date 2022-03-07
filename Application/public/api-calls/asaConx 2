@@ -1,0 +1,56 @@
+/*
+ * Generated ASA REST API sample script - Javascript
+ * Uses node.js
+ */
+
+var https = require('https');
+
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+
+var data = {};
+
+var server = "71.25.48.225";
+
+// Default credentials
+var username = "cisco";
+var password = "cisco";
+
+// process arguments
+// process.argv[0] == node
+// process.argv[1] == filename
+process.argv.forEach(function(val, index) {
+    if (index == 2) {
+        username = val;
+    }
+    else if (index == 3) {
+        password = val;
+    }
+});
+
+var api_path = "/api/monitoring/connections";    // param
+
+
+var options = {
+    host: server,
+    path: api_path,
+    method:"GET",
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Basic ' + new Buffer(username + ':' + password).toString('base64'),
+		'User-Agent': 'REST API Agent'
+    }
+};
+
+var req = https.request(options, function(res) {
+    console.log("statusCode: ", res.statusCode);
+    console.log("headers: ", res.headers);
+
+    res.on('data', function(d) {
+        process.stdout.write(d);
+    });
+});
+req.end();
+
+req.on('error', function(e) {
+    console.error(e);
+});

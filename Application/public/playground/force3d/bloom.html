@@ -1,0 +1,30 @@
+<html>
+
+    <head>
+        <style> body { margin: 0; } </style>
+      
+        <script src="//unpkg.com/3d-force-graph"></script>
+      <!--  <script src="../../dist/3d-force-graph.js"></script>-->
+      </head>
+      
+      <body>
+        <div id="3d-graph"></div>
+      
+        <script type="module">
+          import { UnrealBloomPass } from 'https://cdn.skypack.dev/pin/three@v0.136.0-4Px7Kx1INqCFBN0tXUQc/mode=imports,min/unoptimized/examples/jsm/postprocessing/UnrealBloomPass.js';
+      
+          const Graph = ForceGraph3D()
+            (document.getElementById('3d-graph'))
+              .jsonUrl('data3.json')
+              .nodeLabel('id')
+              .nodeAutoColorBy('group');
+      
+          const bloomPass = new UnrealBloomPass();
+          bloomPass.strength = 3;
+          bloomPass.radius = 1;
+          bloomPass.threshold = 0.1;
+          Graph.postProcessingComposer().addPass(bloomPass);
+        </script>
+      </body>
+
+</html>

@@ -1,0 +1,38 @@
+
+.catRow{
+    margin: 10px 0px;
+    padding:20px 0px 45px;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6026785714285714) 20%, rgba(0,0,0,0.5998774509803921) 80%, rgba(0,0,0,0) 100%);
+    position: relative;
+    left: 0px;
+    right: 0px;
+}
+.row_models{
+    display: flex;
+   /*  overflow-y: scroll;
+    overflow-y: hidden; Hide horizontal scrollbar */
+    
+}
+.row_model{
+    object-fit: contain;
+    width: 100%;
+    max-height: 250px;
+}
+.row_models img{
+    opacity: .60;
+    cursor: pointer;
+}
+.row_models img:hover{
+    opacity: 1;
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: .8s;
+    z-index: 9999;
+}
+
+.catTitle{
+    margin-top: 1.2em;
+    letter-spacing: 3px;
+    margin-left: 8%;
+}

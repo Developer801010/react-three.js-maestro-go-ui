@@ -1,0 +1,160 @@
+[
+    {
+        "appList": [
+            {
+                "id": 1,
+                "complexScore": 42,
+                "appName": "SAP SLD Netweaver ABAP CS+PAS+WD Cluster Node",
+                "host": "virlvpsla1c (NPSLAP1)",
+                "size": 16,
+                "services": 1,
+                "process": 2,
+                "dataSets": 1,
+                "dependent": 8
+            },
+            {
+                "id": 2,
+                "complexScore": 25,
+                "appName": "SAP SLD Netweaver ABAP CS+PAS+WD",
+                "host": "npslap1",
+                "size": 32,
+                "services": 1,
+                "process": 0,
+                "dataSets": 1,
+                "dependent": 8
+            },
+            {
+                "id": 3,
+                "complexScore": 25,
+                "appName": "SAP SLD Netweaver ABAP  Diag",
+                "host": "npslap2",
+                "size": 32,
+                "services": 2,
+                "process": 1,
+                "dataSets": 2,
+                "dependent": 1
+            },
+            {
+                "id": 4,
+                "complexScore": 10,
+                "appName": "Apache Reverse Proxy",
+                "host": "npwpap1",
+                "size": 128,
+                "services": 2,
+                "process": 1,
+                "dataSets": 2,
+                "dependent": 7
+            },
+            {
+                "id": 5,
+                "complexScore": 23,
+                "appName": "SAP PI Netweaver  ABAP Diag",
+                "host": "npwpap2",
+                "size": 128,
+                "services": 2,
+                "process": 1,
+                "dataSets": 2,
+                "dependent": 7
+            },
+            {
+                "id": 6,
+                "complexScore": 10,
+                "appName": "SAP SOLMAN Netweaver ABAP CS+PAS+WD Cluster Node",
+                "host": "npwpap3",
+                "size": 128,
+                "services": 2,
+                "process": 1,
+                "dataSets": 2,
+                "dependent": 7
+            },
+            {
+                "id": 7,
+                "complexScore": 10,
+                "appName": "SAP BobJ Netweaver Java CS+PAS+WD",
+                "host": "npwpap4",
+                "size": 128,
+                "services": 2,
+                "process": 2,
+                "dataSets": 2,
+                "dependent": 7
+            },
+            {
+                "id": 8,
+                "complexScore": 12,
+                "appName": "SAP GRC Netweaver ABAP CS+PAS+WD",
+                "host": "npwpap5",
+                "size": 128,
+                "services": 2,
+                "process": 2,
+                "dataSets": 2,
+                "dependent": 7
+            },
+            {
+                "id": 9,
+                "complexScore": 10,
+                "appName": "SAP EP Netweaver Java CS+PAS+WD",
+                "host": "npwpap6",
+                "size": 128,
+                "services": 2,
+                "process": 1,
+                "dataSets": 2,
+                "dependent": 7
+            },
+            {
+                "id": 10,
+                "complexScore": 25,
+                "appName": "SAP Solman Netweaver ABAP CS+PAS+WD",
+                "host": "npxiap2",
+                "size": 256,
+                "services": 2,
+                "process": 2,
+                "dataSets": 2,
+                "dependent": 2
+            },
+            {
+                "id": 11,
+                "complexScore": 25,
+                "appName": "SAP PI  Netweaver ABAP  CS+PAS+WD",
+                "host": "npxiap3",
+                "size": 256,
+                "services": 2,
+                "process": 2,
+                "dataSets": 2,
+                "dependent": 2
+            },
+            {
+                "id": 12,
+                "complexScore": 43,
+                "appName": "SAP EP Netweaver JAVA CS+PAS+WD Cluster Node",
+                "host": "virlvpsoa1c (NPSOAP1)",
+                "size": 16,
+                "services": 4,
+                "process": 3,
+                "dataSets": 4,
+                "dependent": 8
+            },
+            {
+                "id": 13,
+                "complexScore": 25,
+                "appName": "SAP Fiori Hub Netweaver ABAP CS+PAS+WD",
+                "host": "npboap1",
+                "size": 32,
+                "services": 4,
+                "process": 3,
+                "dataSets": 4,
+                "dependent": 8
+            },
+            {
+                "id": 14,
+                "complexScore": 25,
+                "appName": "SAP Fioir Hub Netweaver ABAP CS+PAS+WD Cluster Node",
+                "host": "npgrap1",
+                "size": 32,
+                "services": 4,
+                "process": 3,
+                "dataSets": 4,
+                "dependent": 8
+            }
+        ]
+    }
+]

@@ -1,0 +1,60 @@
+const UI-Interface = [
+    {
+      id: 1,
+      groupID: 1,
+      status: "offline",
+      ep_icon: "avatar2",
+      name: "Server 2019",
+      ip: "17.16.4.20",
+      ports: "443",
+    },
+    {
+      id: 2,
+      groupID: 2,
+      status: "online",
+      ep_icon: "avatar3",
+      name: "Lab Switch",
+      ip: "17.16.4.20",
+      ports: "8080",
+    }
+  ]
+  
+  const groups = [
+    { id: 1, image: "G", name: "Corp Network" },
+    { id: 2, image: "R", name: "Lab1 Network" },
+
+  ]
+  
+  const ObjectType = [
+      /* If you have a better Categories or more to add please do! */
+    {
+      category: "Servers",
+      child: [
+        { id: 1, name: "Active Directory" },
+        { id: 2, name: "DNS Service" },
+        { id: 3, name: "Routing Server" },
+        { id: 4, name: "Teams Server" },
+      ],
+    },
+    {
+      category: "Switches",
+      child: [{ id: 1, name: "Main Switch" }],
+    },
+    {
+      category: "Apps",
+      child: [
+        { id: 1, name: "GIS Search" },
+        { id: 2, name: "ElastaSearch" },
+        { id: 3, name: "Teams" },
+      ],
+    },
+    {
+      category: "Other",
+      child: [
+        { id: 4, name: "IP Cameras" },
+        { id: 4, name: "SIP Phone" }
+      ],
+    },
+  ]
+  
+  export { ui-interfaces, objects, groups }

@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <!--
+            'cisco.asa.source_interface',
+            'destination.address',
+            'destination.ip',
+            'destination.port',
+            'event.action',
+            'event.code',
+            'event.module',
+            'event.original',
+            'event.type',
+            'host.hostname',
+            'log.level',
+            'log.offset',
+            'network.community_id',
+            'network.iana_number',
+            'network.transport',
+            'process.name',
+            'process.pid',
+            'service.type',
+            'source.address',
+            'source.ip',
+            'source.port',
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+    <style>
+
+
+    </style>
+
+</head>
+    <body>
+
+
+
+
+
+    </body>
+    <script>
+        const options = {
+            includeScore: true,
+            // Search in `author` and in `tags` array
+            keys: [
+                'cisco.asa.source_interface',
+                'destination.address',
+                'destination.ip',
+                'destination.port',
+                'event.action',
+                'event.code',
+                'event.module',
+                'event.original',
+                'event.type',
+                'host.hostname',
+                'log.level',
+                'log.offset',
+                'network.community_id',
+                'network.iana_number',
+                'network.transport',
+                'process.name',
+                'process.pid',
+                'service.type',
+                'source.address',
+                'source.ip',
+                'source.port'            
+            ]
+          }
+          const fuse = new Fuse(list, options)
+          
+          const result = fuse.search('asa')
+    </script>
+</html>
