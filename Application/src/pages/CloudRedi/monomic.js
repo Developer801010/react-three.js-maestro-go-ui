@@ -134,14 +134,6 @@ const monoMic = props => {
             </span>
           </Link>
 
-          <Link className="link" to="/MonoMic/processes">
-            <span>
-              <i className="fas fa-microchip fa-fw"></i>
-
-              Processes
-            </span>
-          </Link>
-
           <Link className="link" to="/MonoMic/host">
             <span>
               <i className="fas fa-server fa-fw"></i>
@@ -167,12 +159,12 @@ const monoMic = props => {
                   <div className="source-title mb-3">
                     <div className="title-left">
                       <h3>Monolithic Application</h3>
-                      <h4>Listing of monolithic applications within your cssurrent environment.</h4>
+                      <h4>Listing of monolithic applications within your current environment.</h4>
                     </div>
 
-                    <div className="title-right">
-                      <h2 className="text-uppercase"></h2>
-                    </div>
+                    {/* <div className="title-right">
+                      <h2 className="text-uppercase">Data sources</h2>
+                    </div> */}
                   </div>
 
                   <PaginationProvider

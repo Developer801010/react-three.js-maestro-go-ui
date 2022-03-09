@@ -228,28 +228,6 @@ const monoMicApplication = () => {
                         </div>
                     </Link>
 
-                    <Link className="link" to="/MonoMic/processes">
-                        <span>
-                            <i className="fas fa-microchip fa-fw"></i>
-
-                            Processes
-                        </span>
-
-                        <div className="service-container">
-                            <div className="service-box">
-                                <div className="service-icon">
-                                    <i className="fas fa-microchip fa-fw"></i>
-                                </div>
-
-                                <div className="service-text">
-                                    <span>
-                                        32
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </Link>
-
                     <Link className="link" to="/MonoMic/host">
                         <span>
                             <i className="fas fa-server fa-fw"></i>
@@ -346,7 +324,7 @@ const monoMicApplication = () => {
                     </h5>
                     <button
                         onClick={() => {
-                            setModalState(false);
+                            setmodal_mi(false);
                         }}
                         type="button"
                         className="close"

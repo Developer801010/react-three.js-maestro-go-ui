@@ -507,7 +507,7 @@ span.flatpickr-weekday {
 
   .link {
     display: block;
-    padding: 4.7rem 0 10px 16px;
+    padding: 6rem 0 10px 16px;
     background: #353a48;
     margin-bottom: 12px;
     border-radius: 0 1.5rem 1.5rem 0;
@@ -617,9 +617,9 @@ span.flatpickr-weekday {
     background: #000011;
   }
 
-  .scene-container {
-    cursor: url("../images/wand_onClick.svg"), auto;
-  }
+  // .scene-container {
+  //   cursor: url("../images/wand_onClick.svg"), auto;
+  // }
 }
 
 .small-wand {
